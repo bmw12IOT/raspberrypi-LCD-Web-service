@@ -1,4 +1,4 @@
-from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer
+import http.server
 import lcddriver
 from time import *
 import urlparse
@@ -13,7 +13,7 @@ def changeLCDMessage(msg):
     lcd.lcd_display_string(msg, 3)
     lcd.lcd_display_string("", 4)
 
-class myHandler(BaseHTTPRequestHandler):
+class myHandler(http.server.BaseHTTPRequestHandler):
 
     def do_GET(self):
         self.send_response(200)
@@ -32,7 +32,7 @@ class myHandler(BaseHTTPRequestHandler):
 
 try:
 
-    server = HTTPServer(('', PORT_NUMBER), myHandler)
+    server = http.server.HTTPServer(('', PORT_NUMBER), myHandler)
     print ('Started httpserver on port ' , PORT_NUMBER)
 
     server.serve_forever()
