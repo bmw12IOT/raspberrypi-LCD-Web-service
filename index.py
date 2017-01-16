@@ -30,7 +30,7 @@ class myHandler(BaseHTTPRequestHandler):
             changeLCDMessage(temp[0])
             self.wfile.write("OK")
         # Send the html message
-        else
+        else:
             self.wfile.write("FAIL")
         return
 
