@@ -8,9 +8,10 @@ lcd = lcddriver.lcd()
 lcd.lcd_clear()
 
 def changeLCDMessage(msg):
+    lcd.lcd_clear()
     lcd.lcd_display_string("DonatoPI", 1)
     lcd.lcd_display_string("", 2)
-    lcd.lcd_display_string(msg, 3)
+    lcd.lcd_display_string(str(msg), 3)
     lcd.lcd_display_string("", 4)
 
 class myHandler(BaseHTTPRequestHandler):
@@ -25,9 +26,10 @@ class myHandler(BaseHTTPRequestHandler):
         if '?' in path:
             path, tmp = path.split('?', 1)
             qs = urlparse.parse_qs(tmp)
+            print qs["msg"]
             changeLCDMessage(qs["msg"])
         # Send the html message
-        self.wfile.write("Hello World !")
+        self.wfile.write("OK")
         return
 
 try:
