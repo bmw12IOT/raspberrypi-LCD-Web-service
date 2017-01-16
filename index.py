@@ -26,10 +26,11 @@ class myHandler(BaseHTTPRequestHandler):
         if '?' in path:
             path, tmp = path.split('?', 1)
             qs = urlparse.parse_qs(tmp)
-            print qs["msg"]
-            changeLCDMessage(qs["msg"])
+            temp = qs["msg"]
+            changeLCDMessage(temp[0])
+            self.wfile.write("OK")
         # Send the html message
-        self.wfile.write("OK")
+        self.wfile.write("FAIL")
         return
 
 try:
