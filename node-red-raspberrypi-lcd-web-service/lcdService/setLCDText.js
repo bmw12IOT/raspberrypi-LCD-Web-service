@@ -47,7 +47,7 @@ module.exports = function(RED) {
                      ln4: ln4,
                     }
         }, function(error, response, body){
-          this.info(body);
+          
         });
 
 
