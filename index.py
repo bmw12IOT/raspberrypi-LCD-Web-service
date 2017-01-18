@@ -4,7 +4,7 @@ from time import *
 import urlparse
 from cgi import parse_header, parse_multipart
 
-PORT_NUMBER = 8080
+PORT_NUMBER = 6349
 lcd = lcddriver.lcd()
 lcd.lcd_clear()
 
