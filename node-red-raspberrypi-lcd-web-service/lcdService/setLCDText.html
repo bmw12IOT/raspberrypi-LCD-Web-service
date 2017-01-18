@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    RED.nodes.registerType('set LCD Text',{
+        category: 'raspberrypi-lcd-web-service',
+        color: '#ffaaaa',
+        defaults: {
+            name: {value:""},
+            url: {value: ""},
+            ln1fix: {value: ""},
+            ln2fix: {value: ""},
+            ln3fix: {value: ""},
+            ln4fix: {value: ""},
+        },
+        inputs:1,
+        outputs:0,
+        icon: "face.png",
+        label: function() {
+            return this.name||"set LCD Text";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="set LCD Text">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-url"><i class="icon-tag"></i>URL</label>
+        <input type="text" id="node-input-url" placeholder="localhost:67">
+    </div>
+    <div class="form-row">
+        <label for="node-input-ln1fix"><i class="icon-tag"></i>ln1</label>
+        <input type="text" id="node-input-ln1fix" placeholder="some text">
+    </div>
+    <div class="form-row">
+        <label for="node-input-ln2fix"><i class="icon-tag"></i>ln2</label>
+        <input type="text" id="node-input-ln2fix" placeholder="some text">
+    </div>
+    <div class="form-row">
+        <label for="node-input-ln3fix"><i class="icon-tag"></i>ln3</label>
+        <input type="text" id="node-input-ln3fix" placeholder="some text">
+    </div>
+    <div class="form-row">
+        <label for="node-input-ln4fix"><i class="icon-tag"></i>ln4</label>
+        <input type="text" id="node-input-ln4fix" placeholder="some text">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Hello World">
+    <p>wants msg.payload = {ln1:<text>,ln2:<text>,ln3:<text>,ln4:<text>}<br/>
+    When a line is missing it will be empty</p>
+</script>

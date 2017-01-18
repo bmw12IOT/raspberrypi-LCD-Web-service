@@ -1,13 +1,14 @@
 {
-    "name"         : "node-red-contrib-demo",
+    "name"         : "node-red-raspberrypi-lcd-web-service",
     "version"      : "0.0.1",
     "description"  : "A sample node for node-red",
     "dependencies": {
+      "request": "^2.79.0"
     },
     "keywords": [ "node-red" ],
     "node-red"     : {
         "nodes": {
-            "sample": "demoNodes/HelloWorld.js"
+            "sample": "lcdService/setLCDText.js"
         }
     }
 }
